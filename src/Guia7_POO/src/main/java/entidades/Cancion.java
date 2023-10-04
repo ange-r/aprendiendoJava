@@ -1,0 +1,54 @@
+/*
+ Desarrollar una clase Cancion con los siguientes atributos: título y autor.
+Se deberá́definir además dos constructores: uno vacío que inicializa el
+título y el autor a cadenas vacías y otro que reciba como parámetros el
+título y el autor de la canción. Se deberán además definir los métodos
+getters y setters correspondientes.
+ */
+package entidades;
+
+import java.util.Scanner;
+
+/**
+ *
+ * @author angel
+ */
+public class Cancion {
+    private String cancion;
+    private String autor;
+
+    public Cancion() {
+    }
+
+    public Cancion(String cancion, String autor) {
+        this.cancion = cancion;
+        this.autor = autor;
+    }
+
+    public String getCancion() {
+        return cancion;
+    }
+
+    public void setCancion(String cancion) {
+        this.cancion = cancion;
+    }
+
+    public String getAutor() {
+        return autor;
+    }
+
+    public void setAutor(String autor) {
+        this.autor = autor;
+    }
+    public void cargarCancion(){
+        Scanner leer = new Scanner(System.in).useDelimiter("\n");
+        System.out.println("Ingrese título de la canción: ");
+        this.cancion = leer.next();
+        System.out.println("Ingrese autor de la camción: ");
+        this.autor = leer.next();
+    }
+    public void mostrarLista(){
+        System.out.println("Título: " + this.cancion);
+        System.out.println("Autor: " + this.autor);
+    }
+}
